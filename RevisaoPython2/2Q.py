@@ -1,8 +1,3 @@
-# Create, Read, Update, Delete
-
-# Exemplar Livro: Livro, Data Aquisição, Custo Compra
-
-# Autor: Nome, Endereço, CPF, Numero de Obras, Descrição
 def cadastrarAutor(idUnicoAutor):
     listaAddAutores.insert(0, idUnicoAutor)
     nomeAutor = str(input("Adicione nome do autor: "))
@@ -69,7 +64,6 @@ def deletarAutor():
             quantidade += 1
     print("Nenhum autor possui o CPF informado.")
 
-# Livro: ISBN, Título, Ano, Lista de Autores
 def cadastrarLivros(idUnicoLivro):
     listaAddLivro.insert(0, idUnicoLivro)
     isbnLivro = int(input("Adicione ISBN do livro: "))
@@ -149,7 +143,7 @@ def adicionarNovosExemplares():
         quantidade += 1
 
 
-listaAutores = [[1, 'Eyder', 'Avenida', 111, 0, ''], [2, 'Lucas', 'Rua', 112, 0, '']]
+listaAutores = []
 idUnicoAutor = 0
 listaLivros = []
 idUnicoLivro = 0
