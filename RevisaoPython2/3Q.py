@@ -1,5 +1,3 @@
-
-
 def depositar(idDeposito, listaDeposito, informacaoConta):
     idConta = int(input("ID da conta a ser depositada: "))
     valor = float(input("Valor do Deposito: "))
