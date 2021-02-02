@@ -1,9 +1,10 @@
 class CadastrarProduto:
+    listaAddProdutos = []
 
-    def __init__(self, listaProdutos, listaAddProdutos, idProduto, nomeProduto, descricaoProduto, valorProduto):
-        self.listaAddProdutos.insert(0, self.idProduto)
-        self.listaAddProdutos.insert(1, self.nomeProduto)
-        self.listaAddProdutos.insert(2, self.descricaoProduto)
-        self.listaAddProdutos.insert(3, self.valorProduto)
-        quant = len(listaProdutos)
-        self.listaProdutos.insert(quant, self.listaAddProdutos)
+    def __init__(self, idProduto, nomeProduto, descricaoProduto, valorProduto):
+        self.idProduto = idProduto
+        self.nomeProduto = nomeProduto
+        self.descricaoProduto = descricaoProduto
+        self.valorProduto = valorProduto
+        CadastrarProduto.listaAddProdutos.extend(idProduto, nomeProduto, descricaoProduto, valorProduto)
+

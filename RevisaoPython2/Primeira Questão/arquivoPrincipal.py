@@ -1,5 +1,5 @@
-import CadastrarProduto
-import CadastrarUsuarios
+from CadastrarProduto import CadastrarProduto
+# from CadastrarUsuarios import CadastrarUsuarios
 
 from datetime import datetime
 
@@ -18,14 +18,12 @@ while valorWhile < 1:
     print("----------------------------------------\n")
     escolha = int(input())
     if escolha == 1:
-        listaAddProdutos = []
         idProduto += 1
         nomeProduto = str(input("Adicione nome do Produto: "))
         descricaoProduto = str(input("Adicione descrição do Produto: "))
         valorProduto = float(input("Adicione valor do produto: "))
-        produtoNovo = CadastrarProduto(listaAddProdutos, listaProdutos,idProduto,
-                                       nomeProduto, descricaoProduto, valorProduto)
-        print(listaProdutos)
+        produtoNovo = CadastrarProduto(idProduto, nomeProduto, descricaoProduto, valorProduto)
+
     elif escolha == 2:
         listaAddCompra = []
         cadastrarCompra()

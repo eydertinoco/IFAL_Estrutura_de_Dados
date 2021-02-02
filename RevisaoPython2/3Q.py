@@ -13,7 +13,6 @@ def depositar(idDeposito, listaDeposito, informacaoConta):
         listaTabelaDeposito.insert(len(listaTabelaDeposito), listaDeposito)
 
 def sacar(idSacar, listarSacar, informacaoConta):
-    idConta = int(input("ID da conta a ser depositada: "))
     valor = float(input("Valor do Deposito: "))
     saldoAtual = float(informacaoConta[3] - valor)
     if saldoAtual < 0:
@@ -21,13 +20,12 @@ def sacar(idSacar, listarSacar, informacaoConta):
     else:
         informacaoConta[3] = saldoAtual
         listarSacar.insert(0, idSacar)
-        listarSacar.insert(1, idConta)
-        listarSacar.insert(2, valor)
+        listarSacar.insert(1, valor)
         listaTabelaSacar.insert(len(listaTabelaSacar), listarSacar)
 
 def transferencia(idTransferencia, listarTransferencia, informacaoConta):
-    idConta = int(input("ID da conta a ser depositada: "))
-    valor = float(input("Valor do Deposito: "))
+    idConta = int(input("ID da conta: "))
+    valor = float(input("Valor da Trasferencia: "))
     saldoAtual = float(informacaoConta[3] - valor)
     if saldoAtual < 0:
         print(" Erro: Saldo insuficiente!")
@@ -117,22 +115,52 @@ def menuConta(informacaoConta, idDeposito, idSacar, idTransferencia):
         print("6 - Sair.")
         print("-------------------------------")
         escolha = int(input("Qual ação deseja fazer? "))
-        if escolha == 1:  # Depositar
+        if escolha == 1:
             listaDeposito = []
             idDeposito += 1
             depositar(idDeposito, listaDeposito, informacaoConta)
-        elif escolha == 2:  # Sacar
+        elif escolha == 2:
             listarSacar = []
             idSacar += 1
             sacar(idSacar, listarSacar, informacaoConta)
-        elif escolha == 3:  # Transferencia
+        elif escolha == 3:
             listarTransferencia = []
             idTransferencia += 1
             transferencia(idTransferencia, listarTransferencia, informacaoConta)
-        # elif escolha == 4:  # Recuperar Patrimônio de um usuário
-        #
-        # elif escolha == 5:  # Recuperar o volume de transações realizadas entre dois bancos.
+        elif escolha == 4:
+            print("\n-------------------------------")
+            print("Recuperar informação do usuário")
+            print("--------------0----------------")
+            print("ID da Conta: ", informacaoConta[0])
+            print("ID do Banco: ", informacaoConta[1][0])
+            print("Banco: ", informacaoConta[1][1])
+            print("ID Usuário: ", informacaoConta[2][0])
+            print("Nome: ", informacaoConta[2][1])
+            print("Saldo: ", informacaoConta[3])
+            print("-------------------------------\n")
 
+        elif escolha == 5:  # Recuperar o volume de transações realizadas entre dois bancos.
+            print("\n-------------------------------")
+            print("Depositos: ")
+            x = 0
+            while x < len(listaTabelaDeposito):
+                print(listaTabelaDeposito[x])
+                x += 1
+            print("-------------------------------")
+            print("\n-------------------------------")
+            print("Saques: ")
+            x = 0
+            while x < len(listaTabelaSacar):
+                print(listaTabelaSacar[x])
+                x += 1
+            print("-------------------------------")
+            print("\n-------------------------------")
+            print("Transferencias: ")
+            x = 0
+            while x < len(listaTabelaTransferencia):
+                print(listaTabelaTransferencia[x])
+                x += 1
+            print("-------------------------------")
         elif escolha == 6:  # Sair
             print("Saindo da conta...")
             print("")
@@ -159,9 +187,7 @@ while x < 1:
     print("-------------------------------")
     print("1 - Entrar em uma conta.")
     print("2 - Criar uma conta.")
-    print("3 - Adicionar um Usuário.")
-    print("4 - Adicionar um Banco.")
-    print("5 - Sair.")
+    print("3 - Sair.")
     print("-------------------------------")
     escolha = int(input("Adicione a numero da ação desejada: "))
     if escolha == 1:
@@ -174,6 +200,6 @@ while x < 1:
     elif escolha == 2:
         listaAddConta = []
         criarconta(idConta, idUsuario, idBanco)
-    elif escolha == 5:
+    elif escolha == 3:
         print("Fim da Operação.")
         break
