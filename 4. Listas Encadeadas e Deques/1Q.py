@@ -1,17 +1,48 @@
+from typing import List
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self._size = 0
+
+    def append(self, elem):
+        if self.head:
+            pointer = self.head
+            while(pointer.next):
+                pointer = pointer.next
+            pointer.next = Node(elem)
+        else:
+            self.head = Node(elem)
+        self.size = self.size + 1
+
+    def __len__(self):
+        return self.size
+    def get(self, index):
+
 def criar_novo_processo (id_processo, tamanho, estrategia_alocacao):
+    print(listaMemoria)
     print("criar_novo_processo")
-
-
 def deletar_processo (id_processo):
     print("deletar_processo")
-
 def imprimir_dump_memoria():
     print("imprimir_dump_memoria")
 
-
-
+#--------------Criação da Memoria Ficticia-----------------------
+#----------------------------------------------------------------
 print("Criando uma memória em bloco do zero.")
+listaMemoria = LinkedList()
 tamanhoTotal = int(input("Adicione o tamanho total da memória em bloco:"))
+x = int(0)
+while x < tamanhoTotal:
+    listaMemoria.append("")
+    x += 1
+#----------------------------------------------------------------
+
 id = int(0)
 lista_id = []
 i = int(0)

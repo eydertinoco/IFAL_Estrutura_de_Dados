@@ -1,15 +1,19 @@
-x = int(input("Adicione um valor inteiro positivo: "))
-y = int(0)
-media = float(x/2)
-
-while (0 < x):
-    if ((media * media) - x) < 0.000001 and ((media * media) - x) > (-0.000001):
-        print("A raiz de {} é igual a {}".format(x, media))
-        break;
+def descobrirRaiz(valorInteiro, y, media, mediaAnterior):
+    if 0.000001 > ((media * media) - valorInteiro) > (-0.000001):
+        print("A raiz de {} é igual a {}".format(valorInteiro, media))
+        return media
     else:
-        if (media*media) < x:
+        if (media*media) < valorInteiro:
             y = media
             media = (mediaAnterior+y)/2
+            descobrirRaiz(valorInteiro, y, media, mediaAnterior)
         else:
             mediaAnterior = media
             media = (media+y)/2
+            descobrirRaiz(valorInteiro, y, media, mediaAnterior)
+
+valorInteiro = int(input("Adicione um valor inteiro positivo: "))
+y = int(0)
+mediaAnterior = int(0)
+media = float(valorInteiro/2)
+descobrirRaiz(valorInteiro, y, media, mediaAnterior)
