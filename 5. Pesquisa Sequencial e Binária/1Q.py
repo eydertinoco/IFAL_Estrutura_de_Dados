@@ -15,5 +15,5 @@ def descobrirRaiz(valorInteiro, y, media, mediaAnterior):
 valorInteiro = int(input("Adicione um valor inteiro positivo: "))
 y = int(0)
 mediaAnterior = int(0)
-media = float(valorInteiro/2)
+media = float(valorInteiro)
 descobrirRaiz(valorInteiro, y, media, mediaAnterior)
