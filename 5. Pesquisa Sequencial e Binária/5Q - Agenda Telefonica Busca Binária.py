@@ -1,52 +1,54 @@
-def comparar_id(lista, posicao, novoId, salvarPosicao, addlista):
-    if posicao != len(lista):
-        if lista[posicao][0] == novoId:
-            print("O ID {} já existe na lista".format(novoId))
-            return registro_lista_telefonica()
-        elif novoId < lista[posicao][0]:
-            salvarPosicao = posicao
-        return comparar_id(lista, posicao+1, novoId, salvarPosicao, addlista)
+def pesquisa_binaria_valor(lista, i, r, valorDesejado):
+    if r >= i:
+        posicao = (i+r) // 2
+        if lista[posicao] == valorDesejado:
+            return posicao
+        elif lista[posicao] > valorDesejado:
+            return pesquisa_binaria_valor(lista, i, posicao-1, valorDesejado)
+        else:
+            return pesquisa_binaria_valor(lista, posicao+1, r, valorDesejado)
+    return -1
+
+def add_valor_lista(addlista, listaTelefonica, posicao):
+    if posicao == len(listaTelefonica):
+        listaTelefonica.insert(posicao, addlista)
+        return registro_lista_telefonica()
+    if addlista[0] == listaTelefonica[posicao][0]:
+        print("O ID {} já existe na lista telefonica".format(addlista[0]))
+        return registro_lista_telefonica()
+    elif listaTelefonica[posicao-1][0] < addlista[0] < listaTelefonica[posicao][0]:
+        listaTelefonica.insert(posicao, addlista)
+        return registro_lista_telefonica()
     else:
-        arrumar_lista(lista, salvarPosicao, novoId, addlista)
-
-def arrumar_lista(lista, posicao, novoId, addlista):
-    if lista[posicao][0] < novoId:
-        posicao += 1
-    elif lista[posicao][0] > novoId:
-        listaArrumacao = []
-        while (posicao < len(lista)):
-            x = lista.pop()
-            listaArrumacao.append(x)
-        lista.append(addlista)
-        while (0 != len(listaArrumacao)):
-            x = listaArrumacao.pop()
-            lista.append(x)
-
+        return add_valor_lista(addlista, listaTelefonica, posicao+1)
 
 def registro_lista_telefonica():
-    print_lista_telefonica()
     addlista = []
     id = int(input("Adicione o ID: "))
     if id < 0:
-        return print("Agenda Encerrada")
+        return print_lista_telefonica()
     addlista.append(id)
     nome = str(input("Adicione o nome: "))
     addlista.append(nome)
-    numero = int(input("Adicione o telefone: "))
+    numero = str(input("Adicione o telefone: "))
     addlista.append(numero)
-    print(listaTelefonica)
-    comparar_id(listaTelefonica, 0, id, 0, addlista)
+    if len(listaTelefonica) == 0:
+        listaTelefonica.insert(0, addlista)
+        return registro_lista_telefonica()
+    else:
+        add_valor_lista(addlista, listaTelefonica, 0)
 
 def print_lista_telefonica():
     x = 0;
-    print("==================")
+    print("\n==================")
     print("Lista Telefonica:")
-    if len(listaTelefonica) == 0:
-        print("Lista Vazia")
-    else:
+    print("==================")
+    if len(listaTelefonica) > 0:
         while x < len(listaTelefonica):
             print(listaTelefonica[x])
             x += 1
+    else:
+        print("Lista Vazia")
     print("==================")
 
 listaTelefonica = []
