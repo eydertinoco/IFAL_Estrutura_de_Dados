@@ -1,56 +1,232 @@
-import time
 
-from mergesort import MergeSort
-from quicksort import QuickSort
+LETRA B - BUBBLESORT
+[11, 9, 7, 5, 3, 1]
+[9, 11, 7, 5, 3, 1]
+[7, 11, 9, 5, 3, 1]
+[5, 11, 9, 7, 3, 1]
+[3, 11, 9, 7, 5, 1]
+[1, 11, 9, 7, 5, 3]
+[1, 9, 11, 7, 5, 3]
+[1, 7, 11, 9, 5, 3]
+[1, 5, 11, 9, 7, 3]
+[1, 3, 11, 9, 7, 5]
+[1, 3, 9, 11, 7, 5]
+[1, 3, 7, 11, 9, 5]
+[1, 3, 5, 11, 9, 7]
+[1, 3, 5, 9, 11, 7]
+[1, 3, 5, 7, 11, 9]
+[1, 3, 5, 7, 9, 11]
+LETRA B - INSERIONSORT
+[11, 9, 7, 5, 3, 1]
+[9, 11, 7, 5, 3, 1]
+[7, 9, 11, 5, 3, 1]
+[5, 7, 9, 11, 3, 1]
+[3, 5, 7, 9, 11, 1]
+[1, 3, 5, 7, 9, 11]
+
+LETRA C - BUBBLESORT
+[2, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 1]
+[2, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 1]
+[2, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 1]
+[2, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 1]
+[2, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 1]
+[2, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 1]
+[2, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 1]
+[2, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 1]
+[2, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 1]
+[2, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 1]
+[2, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 1]
+[1, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 2]
+[1, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 2]
+[1, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 2]
+[1, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 2]
+[1, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 2]
+[1, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 2]
+[1, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 2]
+[1, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 2]
+[1, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 2]
+[1, 3, 6, 8, 10, 12, 11, 9, 7, 5, 4, 2]
+[1, 2, 6, 8, 10, 12, 11, 9, 7, 5, 4, 3]
+[1, 2, 6, 8, 10, 12, 11, 9, 7, 5, 4, 3]
+[1, 2, 6, 8, 10, 12, 11, 9, 7, 5, 4, 3]
+[1, 2, 6, 8, 10, 12, 11, 9, 7, 5, 4, 3]
+[1, 2, 6, 8, 10, 12, 11, 9, 7, 5, 4, 3]
+[1, 2, 6, 8, 10, 12, 11, 9, 7, 5, 4, 3]
+[1, 2, 6, 8, 10, 12, 11, 9, 7, 5, 4, 3]
+[1, 2, 5, 8, 10, 12, 11, 9, 7, 6, 4, 3]
+[1, 2, 4, 8, 10, 12, 11, 9, 7, 6, 5, 3]
+[1, 2, 3, 8, 10, 12, 11, 9, 7, 6, 5, 4]
+[1, 2, 3, 8, 10, 12, 11, 9, 7, 6, 5, 4]
+[1, 2, 3, 8, 10, 12, 11, 9, 7, 6, 5, 4]
+[1, 2, 3, 8, 10, 12, 11, 9, 7, 6, 5, 4]
+[1, 2, 3, 8, 10, 12, 11, 9, 7, 6, 5, 4]
+[1, 2, 3, 7, 10, 12, 11, 9, 8, 6, 5, 4]
+[1, 2, 3, 6, 10, 12, 11, 9, 8, 7, 5, 4]
+[1, 2, 3, 5, 10, 12, 11, 9, 8, 7, 6, 4]
+[1, 2, 3, 4, 10, 12, 11, 9, 8, 7, 6, 5]
+[1, 2, 3, 4, 10, 12, 11, 9, 8, 7, 6, 5]
+[1, 2, 3, 4, 10, 12, 11, 9, 8, 7, 6, 5]
+[1, 2, 3, 4, 9, 12, 11, 10, 8, 7, 6, 5]
+[1, 2, 3, 4, 8, 12, 11, 10, 9, 7, 6, 5]
+[1, 2, 3, 4, 7, 12, 11, 10, 9, 8, 6, 5]
+[1, 2, 3, 4, 6, 12, 11, 10, 9, 8, 7, 5]
+[1, 2, 3, 4, 5, 12, 11, 10, 9, 8, 7, 6]
+[1, 2, 3, 4, 5, 11, 12, 10, 9, 8, 7, 6]
+[1, 2, 3, 4, 5, 10, 12, 11, 9, 8, 7, 6]
+[1, 2, 3, 4, 5, 9, 12, 11, 10, 8, 7, 6]
+[1, 2, 3, 4, 5, 8, 12, 11, 10, 9, 7, 6]
+[1, 2, 3, 4, 5, 7, 12, 11, 10, 9, 8, 6]
+[1, 2, 3, 4, 5, 6, 12, 11, 10, 9, 8, 7]
+[1, 2, 3, 4, 5, 6, 11, 12, 10, 9, 8, 7]
+[1, 2, 3, 4, 5, 6, 10, 12, 11, 9, 8, 7]
+[1, 2, 3, 4, 5, 6, 9, 12, 11, 10, 8, 7]
+[1, 2, 3, 4, 5, 6, 8, 12, 11, 10, 9, 7]
+[1, 2, 3, 4, 5, 6, 7, 12, 11, 10, 9, 8]
+[1, 2, 3, 4, 5, 6, 7, 11, 12, 10, 9, 8]
+[1, 2, 3, 4, 5, 6, 7, 10, 12, 11, 9, 8]
+[1, 2, 3, 4, 5, 6, 7, 9, 12, 11, 10, 8]
+[1, 2, 3, 4, 5, 6, 7, 8, 12, 11, 10, 9]
+[1, 2, 3, 4, 5, 6, 7, 8, 11, 12, 10, 9]
+[1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 11, 9]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 11, 10]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 10]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 11]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+LETRA C - INSERIONSORT
+[2, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 1]
+[2, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 1]
+[2, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 1]
+[2, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 1]
+[2, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 1]
+[2, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 1]
+[2, 4, 6, 8, 10, 11, 12, 9, 7, 5, 3, 1]
+[2, 4, 6, 8, 9, 10, 11, 12, 7, 5, 3, 1]
+[2, 4, 6, 7, 8, 9, 10, 11, 12, 5, 3, 1]
+[2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 3, 1]
+[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
+LETRA D - BUBBLESORT
+[8, 9, 7, 9, 3, 2, 3, 8, 4, 6]
+[8, 9, 7, 9, 3, 2, 3, 8, 4, 6]
+[7, 9, 8, 9, 3, 2, 3, 8, 4, 6]
+[7, 9, 8, 9, 3, 2, 3, 8, 4, 6]
+[3, 9, 8, 9, 7, 2, 3, 8, 4, 6]
+[2, 9, 8, 9, 7, 3, 3, 8, 4, 6]
+[2, 9, 8, 9, 7, 3, 3, 8, 4, 6]
+[2, 9, 8, 9, 7, 3, 3, 8, 4, 6]
+[2, 9, 8, 9, 7, 3, 3, 8, 4, 6]
+[2, 9, 8, 9, 7, 3, 3, 8, 4, 6]
+[2, 8, 9, 9, 7, 3, 3, 8, 4, 6]
+[2, 8, 9, 9, 7, 3, 3, 8, 4, 6]
+[2, 7, 9, 9, 8, 3, 3, 8, 4, 6]
+[2, 3, 9, 9, 8, 7, 3, 8, 4, 6]
+[2, 3, 9, 9, 8, 7, 3, 8, 4, 6]
+[2, 3, 9, 9, 8, 7, 3, 8, 4, 6]
+[2, 3, 9, 9, 8, 7, 3, 8, 4, 6]
+[2, 3, 9, 9, 8, 7, 3, 8, 4, 6]
+[2, 3, 9, 9, 8, 7, 3, 8, 4, 6]
+[2, 3, 8, 9, 9, 7, 3, 8, 4, 6]
+[2, 3, 7, 9, 9, 8, 3, 8, 4, 6]
+[2, 3, 3, 9, 9, 8, 7, 8, 4, 6]
+[2, 3, 3, 9, 9, 8, 7, 8, 4, 6]
+[2, 3, 3, 9, 9, 8, 7, 8, 4, 6]
+[2, 3, 3, 9, 9, 8, 7, 8, 4, 6]
+[2, 3, 3, 9, 9, 8, 7, 8, 4, 6]
+[2, 3, 3, 8, 9, 9, 7, 8, 4, 6]
+[2, 3, 3, 7, 9, 9, 8, 8, 4, 6]
+[2, 3, 3, 7, 9, 9, 8, 8, 4, 6]
+[2, 3, 3, 4, 9, 9, 8, 8, 7, 6]
+[2, 3, 3, 4, 9, 9, 8, 8, 7, 6]
+[2, 3, 3, 4, 9, 9, 8, 8, 7, 6]
+[2, 3, 3, 4, 8, 9, 9, 8, 7, 6]
+[2, 3, 3, 4, 8, 9, 9, 8, 7, 6]
+[2, 3, 3, 4, 7, 9, 9, 8, 8, 6]
+[2, 3, 3, 4, 6, 9, 9, 8, 8, 7]
+[2, 3, 3, 4, 6, 9, 9, 8, 8, 7]
+[2, 3, 3, 4, 6, 8, 9, 9, 8, 7]
+[2, 3, 3, 4, 6, 8, 9, 9, 8, 7]
+[2, 3, 3, 4, 6, 7, 9, 9, 8, 8]
+[2, 3, 3, 4, 6, 7, 9, 9, 8, 8]
+[2, 3, 3, 4, 6, 7, 8, 9, 9, 8]
+[2, 3, 3, 4, 6, 7, 8, 9, 9, 8]
+[2, 3, 3, 4, 6, 7, 8, 9, 9, 8]
+[2, 3, 3, 4, 6, 7, 8, 8, 9, 9]
+[2, 3, 3, 4, 6, 7, 8, 8, 9, 9]
+LETRA D - INSERIONSORT
+[8, 9, 7, 9, 3, 2, 3, 8, 4, 6]
+[8, 9, 7, 9, 3, 2, 3, 8, 4, 6]
+[7, 8, 9, 9, 3, 2, 3, 8, 4, 6]
+[7, 8, 9, 9, 3, 2, 3, 8, 4, 6]
+[3, 7, 8, 9, 9, 2, 3, 8, 4, 6]
+[2, 3, 7, 8, 9, 9, 3, 8, 4, 6]
+[2, 3, 3, 7, 8, 9, 9, 8, 4, 6]
+[2, 3, 3, 7, 8, 8, 9, 9, 4, 6]
+[2, 3, 3, 4, 7, 8, 8, 9, 9, 6]
+[2, 3, 3, 4, 6, 7, 8, 8, 9, 9]
 
 
-class terceiraQuestao:
+def partition(lista, low, high):
+    i = (low - 1)
+    pivot = lista[high]
+    for j in range(low, high):
+        if lista[j] <= pivot:
+            i = i + 1
+            lista[i], lista[j] = lista[j], lista[i]
+    lista[i + 1], lista[high] = lista[high], lista[i + 1]
+    return (i + 1)
+def quickSort(lista, low, high):
+    if len(lista) == 1:
+        return lista
+    if low < high:
+        pi = partition(lista, low, high)
+        quickSort(lista, low, pi - 1)
+        quickSort(lista, pi + 1, high)
 
-    def printInformacoes(self, lista, bubble, temp1, merge, temp2, quick, temp3, insertion, temp4):
-        print("====================================")
-        print("A lista atualmente {}".format(lista))
-        print("====================================")
-        print("Bubblesort {} ms: {}".format(temp1, bubble))
-        print("Mergesort {} ms: {}".format(temp2, merge))
-        print("Quicksort {} ms: {}".format(temp3, quick))
-        print("Insertionsort {} ms: {}".format(temp4, insertion))
-        print("====================================")
 
-    def mergesort(self, vetor):
-        merge = MergeSort.mergesort(self, vetor, 0, len(vetor)-1)
-        return merge
 
-    def quicksort(self, vetor):
-        quick = QuickSort.quicksort(self, vetor, 0, len(vetor) - 1)
-        return quick
+def insertion_sort(lista):
+    for i in range(1, len(lista)):
+        key = lista[i]
+        j = i - 1
+        while j >= 0 and key < lista[j]:
+            lista[j + 1] = lista[j]
+            j -= 1
+        lista[j + 1] = key
 
-if __name__ == "__main__":
-    x = int(0)
-    while x < 4:
-        if x > 0 and x <= 3:
-            if x == 0: list = [2, 4, 6, 8, 10, 12]
-            if x == 1: list = [11, 9, 7, 5, 3, 1]
-            if x == 2: list = [2, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 1]
-            if x == 3: list = [8, 9, 7, 9, 3, 2, 3, 8, 4, 6]
-        inicio = time.time()
-        bubblesort = terceiraQuestao.(list)
-        final = time.time()
-        tempbubblesort = final - inicio
 
-        inicio = time.time()
-        mergesort = terceiraQuestao.mergesort(list)
-        final = time.time()
-        tempmergesort = final-inicio
+x = int(0)
+while x < 4:
+    if x >= 0 and x <= 3:
+        if x == 0: vetor = [2, 4, 6, 8, 10, 12]
+        if x == 1: vetor = [11, 9, 7, 5, 3, 1]
+        if x == 2: vetor = [2, 4, 6, 8, 10, 12, 11, 9, 7, 5, 3, 1]
+        if x == 3: vetor = [8, 9, 7, 9, 3, 2, 3, 8, 4, 6]
+    # inicio = time.time()
+    # bubblesort = terceiraQuestao.bubblesort(list)
+    # final = time.time()
+    # tempbubblesort = final - inicio
 
-        inicio = time.time()
-        quicksort = terceiraQuestao.mergesort(list)
-        final = time.time()
-        tempquicksort = final - inicio
+    print(vetor)
 
-        inicio = time.time()
-        insertionsort = terceiraQuestao.mergesort(list)
-        final = time.time()
-        tempinsertionsort = final - inicio
+    inicio = time.time()
+    mergesort = MergeSort.mergesort(vetor, 0, len(vetor)-1)
+    final = time.time()
+    tempmergesort = final-inicio
+    print("Mergesort {} ms: {}".format(tempmergesort, mergesort))
 
-        terceiraQuestao.printInformacoes(list,bubblesort, tempbubblesort, mergesort, tempmergesort,
-                                         quicksort, insertionsort, tempinsertionsort)
+    inicio = time.time()
+    quicksort = QuickSort.quicksort(vetor, 0, len(vetor)-1)
+    final = time.time()
+    tempquicksort = final - inicio
+    print("Quicksort {} ms: {}".format(tempquicksort, quicksort))
+
+
+
+    # inicio = time.time()
+    # insertionsort = terceiraQuestao.insertionsort(list)
+    # final = time.time()
+    # tempinsertionsort = final - inicio
+
+    # terceiraQuestao.printInformacoes(list,bubblesort, tempbubblesort, mergesort, tempmergesort,
+    #                                  quicksort, insertionsort, tempinsertionsort)
