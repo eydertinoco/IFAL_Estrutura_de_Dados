@@ -3,24 +3,21 @@ class arvore:
         self.atual = valor
         self.filhos = []
 
-    def adicionarFilhos(self, atual):
+    def adicionarFilhos(self, atual, elemento):
         filho = arvore(atual)
         self.filhos.append(filho)
+        if elemento[0] < filho.atual:
+            elemento.pop()
+            elemento.append(filho.atual)
         return filho
 
-    def maiorElemento(self):
-        lista.append(raiz.filhos.atual)
-        i = int(0)
-        while i < 10:
-            lista.append(raiz.filhos[i].atual)
-            i += 1
-
-
-
-lista = []
+elemento = []
+elemento.append(0)
 raiz = arvore(5)
-lista.append(raiz.atual)
-raiz.adicionarFilhos(9)
-raiz.adicionarFilhos(2)
-raiz.filhos[0].adicionarFilhos(10)
-print(raiz.maiorElemento())
+raiz.adicionarFilhos(9, elemento)
+raiz.adicionarFilhos(2, elemento)
+raiz.filhos[0].adicionarFilhos(10, elemento)
+raiz.filhos[1].adicionarFilhos(11, elemento)
+raiz.filhos[0].filhos[0].adicionarFilhos(15, elemento)
+maiorElemento = elemento.pop()
+print("O maior elemento da Árvore é: {}".format(maiorElemento))

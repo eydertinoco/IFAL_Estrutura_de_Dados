@@ -5,18 +5,14 @@ class No:
         self.esquerda = esquerda
 
 class arvoreBinaria:
-
     def __init__(self):
         self.root = No(None, None, None)
         self.root = None
 
     def inserirValor(self, valor):
-        # Primeiro precisa criar um novo Nó
         novo = No(valor, None, None)
-        # Se for o primeiro No criado, será a Raiz.
         if self.root == None:
             self.root = novo
-        # Se não, será a Sub-Arvore ou uma Folha.
         else:
             atual = self.root
             while True:
@@ -33,11 +29,11 @@ class arvoreBinaria:
                     if atual == None:
                         anterior.direita = novo
                         return
-    def preOrder(self, atual):
+    def imprimir(self, atual):
         if atual != None:
             print(atual.item, end=" ")
-            self.preOrder(atual.esquerda)
-            self.preOrder(atual.direita)
+            self.imprimir(atual.esquerda)
+            self.imprimir(atual.direita)
 
     def inverterArvore(self, atual):
         if atual == None:
@@ -58,10 +54,11 @@ arvore.inserirValor(6)
 arvore.inserirValor(5)
 arvore.inserirValor(10)
 arvore.inserirValor(8)
+print("Utilizando a Árvore presente na questão, o código é uma inversão, invertendo as sub-àrvores e suas folhas.:")
 print("Árvore Original:")
-arvore.preOrder(arvore.root)
+arvore.imprimir(arvore.root)
 print("\n")
 print("Árvore Invertida:")
 arvore.inverterArvore(arvore.root)
-arvore.preOrder(arvore.root)
+arvore.imprimir(arvore.root)
 

@@ -5,30 +5,25 @@ class No:
         self.esquerda = esquerda
 
 class arvoreBinaria:
-
     def __init__(self):
         self.root = No(None, None, None)
         self.root = None
 
     def inserirValor(self, valor):
-        # Primeiro precisa criar um novo Nó
         novo = No(valor, None, None)
-        # Vai reconhecer se é o primeiro Nó criado ou não.
-        # Se for o primeiro será a Raiz.
         if self.root == None:
             self.root = novo
-        # Sub-Arvore
         else:
             atual = self.root
             while True:
                 anterior = atual
-                # Esquerda
+                # Esquerda ========================
                 if valor <= atual.item:
                     atual = atual.esquerda
                     if atual == None:
                         anterior.esquerda = novo
                         return
-                # Direita
+                # Direita ========================
                 else:
                     atual = atual.direita
                     if atual == None:
@@ -50,6 +45,7 @@ arvore = arvoreBinaria()
 tamanho = int(0)
 i = 0
 # Adicionar Árvore
+print("Crie sua Árvore e depois digite um Valor N, o código vai imprimir todos os valores até chegar ao valor desejado.")
 print("Adicione os valores de sua Árvore, para concluir digite -999.")
 while i < 1:
     valor = int(input("{}° valor: ".format(tamanho)))
