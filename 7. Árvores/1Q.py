@@ -1,15 +1,26 @@
-class No:
+class arvore:
+    def __init__(self, valor):
+        self.atual = valor
+        self.filhos = []
 
-    def __init__(self, key, dir, esq):
-        self.item = key
-        self.dir = dir
-        self.esq = esq
+    def adicionarFilhos(self, atual):
+        filho = arvore(atual)
+        self.filhos.append(filho)
+        return filho
 
-def altura(self, atual):
-    if atual == None or atual.esq == None and atual.dir == None:
-        return 0
-    else:
-        if self.altura(atual.esq) > self.altura(atual.dir):
-            return 1 + self.altura(atual.esq)
-        else:
-            return 1 + self.altura(atual.dir)
+    def maiorElemento(self):
+        lista.append(raiz.filhos.atual)
+        i = int(0)
+        while i < 10:
+            lista.append(raiz.filhos[i].atual)
+            i += 1
+
+
+
+lista = []
+raiz = arvore(5)
+lista.append(raiz.atual)
+raiz.adicionarFilhos(9)
+raiz.adicionarFilhos(2)
+raiz.filhos[0].adicionarFilhos(10)
+print(raiz.maiorElemento())
