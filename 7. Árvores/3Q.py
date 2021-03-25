@@ -50,10 +50,11 @@ arvore = arvoreBinaria()
 tamanho = int(0)
 i = 0
 # Adicionar Árvore
+print("Adicione os valores de sua Árvore, para concluir digite -999.")
 while i < 1:
     valor = int(input("{}° valor: ".format(tamanho)))
-    if valor < 0:
-        break;
+    if valor == -999:
+        break
     arvore.inserirValor(valor)
     tamanho += 1
 # Ordenar Árvore

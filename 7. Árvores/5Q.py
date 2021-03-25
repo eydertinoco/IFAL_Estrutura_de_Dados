@@ -33,25 +33,32 @@ class arvoreBinaria:
                     if atual == None:
                         anterior.direita = novo
                         return
-    def contarFolhas(self, atual):
-        if atual == None:
-            return 0
-        if atual.esquerda == None and atual.direita == None:
-            return 1
-        return self.contarFolhas(atual.esquerda) + self.contarFolhas(atual.direita)
+    def preOrder(self, atual):
+        if atual != None:
+            print(atual.item, end=" ")
+            self.preOrder(atual.esquerda)
+            self.preOrder(atual.direita)
 
+    def inverterArvore(self, atual):
+        if atual == None:
+            return
+        trocarPosicao = atual.esquerda
+        atual.esquerda = atual.direita
+        atual.direita = trocarPosicao
+        self.inverterArvore(atual.esquerda)
+        self.inverterArvore(atual.direita)
 
 arvore = arvoreBinaria()
-i = 0
-tamanho = int(0)
 # Adicionar Árvore
-print("Adicione os valores de sua Árvore, para concluir digite -999.")
-while i < 1:
-    valor = int(input("{}° valor: ".format(tamanho)))
-    if valor == -999:
-        break;
-    arvore.inserirValor(valor)
-    tamanho += 1
-# Contar N° Folhas
-numeroFolhas = arvore.contarFolhas(arvore.root)
-print("A quantidade de folhas é {}.".format(numeroFolhas))
+arvore.inserirValor(4)
+arvore.inserirValor(2)
+arvore.inserirValor(1)
+arvore.inserirValor(3)
+arvore.inserirValor(6)
+arvore.inserirValor(5)
+arvore.inserirValor(10)
+arvore.inserirValor(8)
+print(arvore.preOrder(arvore.root))
+arvore.inverterArvore(arvore.root)
+print(arvore.preOrder(arvore.root))
+
